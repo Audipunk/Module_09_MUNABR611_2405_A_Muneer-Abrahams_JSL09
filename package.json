@@ -1,13 +1,17 @@
 {
     "name": "project",
-    "dependencies": {},
     "devDependencies": {
-      "vite": "latest"
+        "vite": "latest"
     },
     "scripts": {
-      "start": "vite",
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
-    }
-  }
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "version": "1.0.0",
+    "description": "You will:\r 1. Use the provided Starter Code Repository: https://github.com/CodeSpace-Academy/Module_09_StudentNo_Classcode_Group_Name-Surname_JSL09\r 2. Code your solution.\r 3. Commit changes to your GitHub repository.\r 4. Submit the GitHub Repository Link to the LMS [JSL09] Submission Project Tab.",
+    "main": "index.js",
+    "author": "",
+    "license": "ISC"
+}
