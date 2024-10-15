@@ -5,8 +5,8 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
 		document.getElementById("author").textContent = `By: ${data.user.name}`
     })
     .catch(err => {
-        document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1560008511-11c63416e52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDIxMTc&ixlib=rb-1.2.1&q=80&w=1080)`
-            document.getElementById("author").textContent = `By: Dodi Achmad`
+        document.body.style.backgroundImage = "https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjkwMzU0MzR8&ixlib=rb-4.0.3&q=85",
+            document.getElementById("author").textContent = `By: Qingbao Meng`
         })
       
         fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
@@ -16,9 +16,24 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
         }
         return res.json()
     })
-    
 
+	.then(data => {
+        document.getElementById("crypto-top").innerHTML = `
+            <img src=${data.image.small} />
+            <span>${data.name}</span>
+        `
+        document.getElementById("crypto").innerHTML += `
+            <p>🎯: $${data.market_data.current_price.usd}</p>
+            <p>👆: $${data.market_data.high_24h.usd}</p>
+            <p>👇: $${data.market_data.low_24h.usd}</p>
+        `
+    })
+    .catch(err => console.error(err))
 
+	function getCurrentTime() {
+		const date = new Date()
+		document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+	}
         /**
  * {
 	id: "KMn4VEeEPR8",
@@ -108,23 +123,9 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
         // Use a default background image/author
      
 
-    .then(data => {
-        document.getElementById("crypto-top").innerHTML = `
-            <img src=${data.image.small} />
-            <span>${data.name}</span>
-        `
-        document.getElementById("crypto").innerHTML += `
-            <p>🎯: $${data.market_data.current_price.usd}</p>
-            <p>👆: $${data.market_data.high_24h.usd}</p>
-            <p>👇: $${data.market_data.low_24h.usd}</p>
-        `
-    })
-    .catch(err => console.error(err))
 
-function getCurrentTime() {
-    const date = new Date()
-    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
-}
+
+
 
 setInterval(getCurrentTime, 1000)
 
