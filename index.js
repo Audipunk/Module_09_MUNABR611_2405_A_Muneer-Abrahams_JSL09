@@ -1,4 +1,4 @@
-function main() {
+
 	
 const myRequest = new Request("https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjkwMzU0MzR8&ixlib=rb-4.0.3&q=85");
 
@@ -60,7 +60,7 @@ navigator.geolocation.getCurrentPosition(position => {
         })
         .catch(err => console.error(err))
 });
-}
+
         /**
  * {
 	id: "KMn4VEeEPR8",
