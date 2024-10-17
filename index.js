@@ -1,14 +1,17 @@
+function main() {
+	
 const myRequest = new Request("https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjkwMzU0MzR8&ixlib=rb-4.0.3&q=85");
+
 fetch(myRequest)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
         document.body.style.backgroundImage = `url(${data.urls.full})`
 		document.getElementById("author").textContent = `By: ${data.user.name}`
     })
-    .catch(res => {
+    .catch(_res => {
         document.body.style.backgroundImage = "https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjkwMzU0MzR8&ixlib=rb-4.0.3&q=85",
             document.getElementById("author").textContent = `By: Qingbao Meng`
-        })
+        }),
       
         fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => {
@@ -57,6 +60,7 @@ navigator.geolocation.getCurrentPosition(position => {
         })
         .catch(err => console.error(err))
 });
+}
         /**
  * {
 	id: "KMn4VEeEPR8",
