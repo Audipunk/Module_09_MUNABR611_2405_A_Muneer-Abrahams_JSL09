@@ -1,10 +1,10 @@
-fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature')
+fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.full})`
 		document.getElementById("author").textContent = `By: ${data.user.name}`
     })
-    .catch(err => {
+    .catch(res => {
         document.body.style.backgroundImage = "https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjkwMzU0MzR8&ixlib=rb-4.0.3&q=85",
             document.getElementById("author").textContent = `By: Qingbao Meng`
         })
@@ -14,7 +14,8 @@ fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
         if (!res.ok) {
             throw Error("Something went wrong")
         }
-        return res.json()
+		console.log("response.url =", "https://images.unsplash.com/photo-1501854140801-50d01698950b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MjkwMzU0MzR8&ixlib=rb-4.0.3&q=85");
+        return res.json();
     })
 
 	.then(data => {
