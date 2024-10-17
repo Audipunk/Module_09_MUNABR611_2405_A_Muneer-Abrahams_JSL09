@@ -1,31 +1,21 @@
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Personal Dashboard</title>
-  </head>
-  <body>
-    <main>
-      <div class="top">
-        <div id="crypto">
-          <div id="crypto-top"></div>
-        </div>
-        <div id="weather"></div>
-      </div>
-      <p>Weather</p>
-    </div>
-      <h1 id="time" class="time">TIME HERE</h1>
-      <p id="author"></p>
-    </main>
-    <script src="index.js" type="module">
-      fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
-    .then(res => res.json())
-    .then(data => {
-        document.body.style.backgroundImage = `url(${data.urls.full})`
-		document.getElementById("author").textContent = `By: ${data.user.name}`
-    })
-    </script>
-  </body>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="index.css">
+        <title>Personal Dashboard</title>
+    </head>
+    <body>
+        <main>    
+            <div class="top">
+                <div id="crypto">
+                    <div id="crypto-top"></div>
+                </div>
+                <div id="weather"></div>
+            </div>
+            
+            <h1 id="time" class="time"></h1>
+            <p id="author"></p>
+        </main>
+        <script src="index.js"></script>
+    </body>
 </html>
