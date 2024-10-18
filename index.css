@@ -36,6 +36,7 @@ h1.name {
 h1.time {
     text-align: center;
     font-size: 5rem;
+    color: rgb(52, 173, 107);
 }
 
 div#crypto {
