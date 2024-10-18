@@ -27,9 +27,9 @@ div.top {
     justify-content: space-between;
 }
 
-h1.{
+h1.name {
     text-align: center;
-    font-size: 5rem;
+    font-size: 7rem;
 }
 
 h1.time {
